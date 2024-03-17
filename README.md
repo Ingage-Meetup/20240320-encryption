@@ -2,6 +2,7 @@
 
 ## Encryption & Decryption
 ![](Encryption-Decryption.jpg)
+
 Encryption is a process used to convert simple readable data known as plain text to unreadable data known as ciphertext which can only be converted to plain text if the user knows the encryption key. It is used basically to keep our data safe. The main purpose of the encryption is to convert our data in such a form that it is garbage for the person who does not know the encryption key. It is used to prevent unauthorized access. The reverse of encryption is decryption and it is used to get back the plain text from the ciphertext. For decryption, we must know the encryption key and the encryption algorithm. 
 
 ## Encoding & Decoding
