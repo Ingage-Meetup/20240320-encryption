@@ -39,9 +39,61 @@ The second part of the challenge is to exchange secret messages with the other p
 ### Suggestions
 Here are some suggestions for algorithms to implement, but feel free to research and choose your own. Try to stay away from using your language's crypto libraries - while those would certainly be more secure than these suggestions, you will miss out on some of the learnings you will get by implementing your own.
 
-* [Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher) or [ROT-13](https://en.wikipedia.org/wiki/ROT13)
-* [XOR Cypher](https://en.wikipedia.org/wiki/XOR_cipher)
-* [One-Time Pad](https://en.wikipedia.org/wiki/One-time_pad)
+#### Caesar Cipher or ROT-13
+The [Caesar Cipher](https://en.wikipedia.org/wiki/Caesar_cipher) (or [ROT-13](https://en.wikipedia.org/wiki/ROT13), which is just a specialization of the Caesar Cipher) is a substitution cipher where each character is "shifted" (replaced by another character that is further down in the alphabet), wrapping around to the beginning if needed.
+
+In pseudocode:
+```javascript
+function caesarEncrypt(plaintext, shift):
+    ciphertext := ""
+    for each character in plaintext:
+        if character is an uppercase letter:
+            encryptedChar := (character + shift - 'A') % 26 + 'A'
+        else if character is a lowercase letter:
+            encryptedChar := (character + shift - 'a') % 26 + 'a'
+        else:
+            encryptedChar := character
+        append encryptedChar to ciphertext
+    return ciphertext
+
+function caesarDecrypt(ciphertext, shift):
+    return caesarEncrypt(ciphertext, 26 - shift)
+```
+
+#### XOR Cypher
+The [XOR Cypher](https://en.wikipedia.org/wiki/XOR_cipher) takes each plaintext character and performs an XOR operation on it with a specified key value. Because of the way an XOR operation works, decryption is accomplished by simply running the encryption process again with the same key.
+
+In pseudocode:
+```javascript
+function xorEncrypt(plaintext, key):
+    ciphertext := ""
+    for each character in plaintext:
+        encryptedChar := character XOR key
+        append encryptedChar to ciphertext
+    return ciphertext
+
+function xorDecrypt(ciphertext, key):
+    return xorEncrypt(ciphertext, key)  // XOR decryption is the same as encryption
+```
+
+This cipher is most easily implemented by repeating the key for each character in the plaintext.
+
+### One-Time Pad
+[One-Time Pad](https://en.wikipedia.org/wiki/One-time_pad), also known as the Vernam Cipher, is very similar to the XOR cipher, but with some important "key" differences. The difference is in the requirements of the "key" For One-Time Pad, the key must be exactly the same length as the text being encrypted, and it should be a truly random key with no repetition. The algorithm is very similar though, and in pseudocode, looks identical.
+
+In pseudocode:
+```javascript
+function vernamEncrypt(plaintext, key):
+    ciphertext := ""
+    for each character in plaintext:
+        encryptedChar := character XOR key
+        append encryptedChar to ciphertext
+    return ciphertext
+
+function vernamDecrypt(ciphertext, key):
+    return vernamEncrypt(ciphertext, key)  // Vernam decryption is the same as encryption
+
+```
 
 ### Starter Projects
 See solutions in different languages in the "Templates" directory. Once you decide which language you'd like to use,
