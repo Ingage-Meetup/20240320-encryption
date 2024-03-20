@@ -32,6 +32,7 @@ Credit: https://www.geeksforgeeks.org/difference-between-encryption-and-encoding
 Hashing is the process of transforming any given key or a string of characters into another value. This is usually represented by a shorter, fixed-length value or key that represents and makes it easier to find or employ the original string.
 
 Credit: https://www.techtarget.com/searchdatamanagement/definition/hashing
+
 Image Credit: https://www.okta.com/identity-101/hashing-algorithms/
 
 ## Challenge
