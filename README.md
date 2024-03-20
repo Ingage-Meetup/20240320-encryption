@@ -27,11 +27,12 @@ This process is used to ensure the integrity and usability of data. The real-lif
 Credit: https://www.geeksforgeeks.org/difference-between-encryption-and-encoding/
 
 ## Hashing
-![](HashingAlgorithm.png)
+![](HashingAlgorithm.jpg)
 
 Hashing is the process of transforming any given key or a string of characters into another value. This is usually represented by a shorter, fixed-length value or key that represents and makes it easier to find or employ the original string.
 
 Credit: https://www.techtarget.com/searchdatamanagement/definition/hashing
+Image Credit: https://www.okta.com/identity-101/hashing-algorithms/
 
 ## Challenge
 The first part of the challenge for tonight will involve working in your pair to implement and test an encryption & decryption algorithm of your choice. You should be able to accept plaintext and output the cipher text, and also accept cipher text and output the plaintext. But before deciding on an algorithm, find another pair in the room who is planning to implement the same algorithm. Do not work with that pair yet though - stay in your own pair to implement and test your algorithm.
